@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import pe.edu.cibertec.proyecto_inventario.dto.ProductDTO;
+import pe.edu.cibertec.proyecto_inventario.dto.ProductListDTO;
 import pe.edu.cibertec.proyecto_inventario.model.Product;
-import pe.edu.cibertec.proyecto_inventario.model.ProductDTO;
-import pe.edu.cibertec.proyecto_inventario.model.ProductListDTO;
 import pe.edu.cibertec.proyecto_inventario.repository.ProductRepository;
 import pe.edu.cibertec.proyecto_inventario.repository.BrandRepository;
 import pe.edu.cibertec.proyecto_inventario.repository.CategoryRepository;

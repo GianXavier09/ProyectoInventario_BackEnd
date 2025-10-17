@@ -1,4 +1,4 @@
-package pe.edu.cibertec.proyecto_inventario.model;
+package pe.edu.cibertec.proyecto_inventario.dto;
 
 import lombok.Getter;
 import lombok.Setter;

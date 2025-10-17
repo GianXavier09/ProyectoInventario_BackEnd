@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.edu.cibertec.proyecto_inventario.model.UsuarioSeguridadDto;
+import pe.edu.cibertec.proyecto_inventario.dto.UsuarioSeguridadDto;
 import pe.edu.cibertec.proyecto_inventario.model.Usuario;
 import pe.edu.cibertec.proyecto_inventario.security.IJwtService;
 import pe.edu.cibertec.proyecto_inventario.service.IUsuarioService;
