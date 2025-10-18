@@ -24,43 +24,43 @@ import pe.edu.cibertec.proyecto_inventario.service.ProductService;
 @RequestMapping("/api/v1/product")
 public class ProductController {
 
-    private final ProductService productService;
+	private final ProductService productService;
 
-    @GetMapping
-    public ResponseEntity<List<ProductListDTO>> getAllProducts() {
-        List<ProductListDTO> products = productService.getAllProducts();
-        if (products.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(products);
-    }
+	@GetMapping
+	public ResponseEntity<List<ProductListDTO>> getAllProducts() {
+		List<ProductListDTO> products = productService.getAllProducts();
+		if (products.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(products);
+	}
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getProductById(@PathVariable Integer id) throws Exception {
-    	ProductDTO product = productService.getProductById(id)
-                .orElseThrow(() -> new Exception("El producto no existe"));
-        return ResponseEntity.ok(product);
-    }
+	@GetMapping("/{id}")
+	public ResponseEntity<ProductDTO> getProductById(@PathVariable Integer id) throws Exception {
+		ProductDTO product = productService.getProductById(id)
+				.orElseThrow(() -> new Exception("El producto no existe"));
+		return ResponseEntity.ok(product);
+	}
 
-    @PostMapping
-    public ResponseEntity<ProductDTO> saveProduct(@RequestBody ProductDTO productDto) {
-        ProductDTO savedProduct = productService.saveProduct(productDto);
-        return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
-    }
+	@PostMapping
+	public ResponseEntity<ProductDTO> saveProduct(@RequestBody ProductDTO productDto) {
+		ProductDTO savedProduct = productService.saveProduct(productDto);
+		return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
+	}
 
-    @PutMapping("/{id}")
-    public ResponseEntity<ProductDTO> updateProduct(@PathVariable Integer id,
-                                                    @RequestBody ProductDTO productDto) throws Exception {
-        productService.getProductById(id).orElseThrow(() -> new Exception("El producto no existe"));
-        productDto.setProductid(id);
+	@PutMapping("/{id}")
+	public ResponseEntity<ProductDTO> updateProduct(@PathVariable Integer id, @RequestBody ProductDTO productDto)
+			throws Exception {
+		productService.getProductById(id).orElseThrow(() -> new Exception("El producto no existe"));
+		productDto.setProductid(id);
 
-        ProductDTO updatedProduct = productService.updateProduct(productDto);
-        return ResponseEntity.ok(updatedProduct);
-    }
+		ProductDTO updatedProduct = productService.updateProduct(productDto);
+		return ResponseEntity.ok(updatedProduct);
+	}
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable Integer id) {
-        productService.deleteProduct(id);
-        return ResponseEntity.noContent().build();
-    }
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteProduct(@PathVariable Integer id) {
+		productService.deleteProduct(id);
+		return ResponseEntity.noContent().build();
+	}
 }
