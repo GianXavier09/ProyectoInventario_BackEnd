@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.cibertec.proyecto_inventario.dto.AuthRequest;
 import pe.edu.cibertec.proyecto_inventario.dto.UsuarioSeguridadDto;
 import pe.edu.cibertec.proyecto_inventario.model.Usuario;
 import pe.edu.cibertec.proyecto_inventario.security.IJwtService;
@@ -71,16 +72,3 @@ public class AuthController {
     }
 }
 
-class AuthRequest {
-    private String username;
-    private String password;
-
-    public String getUsername() { 
-    	return username; }
-    public void setUsername(String username) { 
-    	this.username = username; }
-    public String getPassword() { 
-    	return password; }
-    public void setPassword(String password) { 
-    	this.password = password; }
-}
