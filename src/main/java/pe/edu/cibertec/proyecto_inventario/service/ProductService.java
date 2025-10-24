@@ -64,6 +64,7 @@ public class ProductService {
         product.setStock(dto.getStock()); 
         product.setEstado(dto.getEstado());
         product.setTalla(dto.getTalla());
+        product.setImagenUrl(dto.getImagenUrl());
 
         product.setCategories(categoryRepository.findById(dto.getCategoryid())
                 .orElseThrow(() -> new RuntimeException("Categoría no encontrada")));
@@ -84,6 +85,7 @@ public class ProductService {
         dto.setTalla(product.getTalla());
         dto.setCategoryid(product.getCategories().getCategoryid());
         dto.setBrandid(product.getBrands().getBrandid());
+        dto.setImagenUrl(product.getImagenUrl());
         return dto;
     }
 
@@ -97,6 +99,7 @@ public class ProductService {
         dto.setTalla(product.getTalla());
         dto.setCategoryname(product.getCategories() != null ? product.getCategories().getCategoryname() : null);
         dto.setMarcanombre(product.getBrands() != null ? product.getBrands().getMarcanombre() : null);
+        dto.setImagenUrl(product.getImagenUrl());
         return dto;
     }
 }

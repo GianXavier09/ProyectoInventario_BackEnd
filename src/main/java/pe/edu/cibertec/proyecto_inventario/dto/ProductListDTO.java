@@ -14,4 +14,5 @@ public class ProductListDTO {
 	private String talla;
 	private String categoryname;
 	private String marcanombre;
+	private String imagenUrl;
 }

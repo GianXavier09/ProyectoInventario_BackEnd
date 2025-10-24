@@ -24,6 +24,7 @@ public class Product {
     private Integer stock;
     private Boolean estado;
     private String talla;
+    private String imagenUrl;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")

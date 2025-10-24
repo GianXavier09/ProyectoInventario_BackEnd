@@ -15,5 +15,6 @@ public class ProductDTO {
     private String talla;
     private Integer categoryid;
     private Integer brandid;
+    private String imagenUrl;
 
 }
